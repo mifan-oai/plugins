@@ -1,0 +1,46 @@
+{
+  "name": "prism",
+  "version": "0.1.0",
+  "description": "Author LaTeX papers and documents in OpenAI Prism with Codex.",
+  "author": {
+    "name": "OpenAI",
+    "email": "support@openai.com",
+    "url": "https://openai.com/"
+  },
+  "homepage": "https://openai.com/prism",
+  "repository": "https://github.com/openai/plugins",
+  "license": "MIT",
+  "keywords": [
+    "prism",
+    "latex",
+    "tex",
+    "pdf",
+    "research",
+    "documents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Prism",
+    "shortDescription": "Author LaTeX papers and documents",
+    "longDescription": "Use Codex with OpenAI Prism to author, revise, compile, and debug LaTeX papers and documents from draft through finished PDF.",
+    "developerName": "OpenAI",
+    "category": "Research",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://openai.com/prism",
+    "privacyPolicyURL": "https://openai.com/policies/privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/terms-of-use/",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "defaultPrompt": [
+      "Create a new LaTeX project",
+      "Draft a LaTeX paper from my notes",
+      "Fix the current LaTeX build errors"
+    ],
+    "brandColor": "#60A5FA",
+    "screenshots": []
+  }
+}
