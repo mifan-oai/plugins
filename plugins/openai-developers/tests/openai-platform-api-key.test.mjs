@@ -36,13 +36,10 @@ const APPLIED_OPENAI_DOCS_SKILL = path.resolve(
   __dirname,
   "../../../lib/applied/applied_skills/applied_skills/example_skills/openai-docs/current/SKILL.md",
 );
-const PLUGIN_ICON = path.resolve(
+const LIGHT_PLUGIN_ICON = path.resolve(__dirname, "../assets/openai-blossom.svg");
+const DARK_PLUGIN_ICON = path.resolve(
   __dirname,
-  "../assets/openai-platform.png",
-);
-const APP_ICON = path.resolve(
-  __dirname,
-  "../../../chatgpt/web/public/images/ecosystem/apps/openai_platform/icon.png",
+  "../assets/openai-blossom-dark.svg",
 );
 const SECRET = "sk-proj-test-secret-value";
 
@@ -302,13 +299,21 @@ test("skill metadata describes safe API key setup", () => {
   assert.doesNotMatch(metadata, /allow_implicit_invocation/);
 });
 
-test("plugin and app tiles use the same OpenAI Platform logo", (t) => {
-  if (!fs.existsSync(APP_ICON)) {
-    t.skip("monorepo OpenAI Platform app icon is not available in this repository");
-    return;
-  }
+test("plugin tiles and composer use theme-aware OpenAI Blossom icons", () => {
+  const pluginManifest = JSON.parse(fs.readFileSync(PLUGIN_MANIFEST, "utf8"));
+  const lightIcon = fs.readFileSync(LIGHT_PLUGIN_ICON, "utf8");
+  const darkIcon = fs.readFileSync(DARK_PLUGIN_ICON, "utf8");
 
-  assert.deepEqual(fs.readFileSync(PLUGIN_ICON), fs.readFileSync(APP_ICON));
+  assert.equal(pluginManifest.interface.composerIcon, "./assets/openai-blossom.svg");
+  assert.equal(pluginManifest.interface.logo, "./assets/openai-blossom.svg");
+  assert.equal(
+    pluginManifest.interface.logoDark,
+    "./assets/openai-blossom-dark.svg",
+  );
+  assert.equal(Object.hasOwn(pluginManifest.interface, "brandColor"), false);
+  assert.match(lightIcon, /prefers-color-scheme: dark/);
+  assert.match(lightIcon, /fill="#0D0D0D"/);
+  assert.match(darkIcon, /fill="#F5F5F5"/);
 });
 
 test("skill asks before building API-backed apps when any usable key exists", () => {

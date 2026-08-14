@@ -9,7 +9,7 @@ This plugin is the Codex-facing bundle for OpenAI developer workflows. It pairs 
 - `.mcp.json` and `mcp/server.mjs` provide an editable local destination confirmation form for the API-key setup flow.
 - `skills/openai-platform-api-key/` handles encrypted API-key creation and local project setup; its preferred flow uses the OpenAI Platform connector-owned picker for the key name, organization, and project, then requests local confirmation of the env-file destination before writing locally.
 - `skills/openai-api-troubleshooting/` classifies common runtime API failures and routes users to the right next step.
-- `assets/openai-platform.png` is intentionally shared by both the plugin tile and the bundled OpenAI Platform app tile.
+- `assets/openai-blossom.svg` and `assets/openai-blossom-dark.svg` provide theme-aware OpenAI Blossom icons for the plugin tile and composer.
 - `skills/agents-sdk/` builds, runs, deploys and evaluates Agents SDK apps.
 - `skills/build-chatgpt-app/` scaffolds, refactors, and troubleshoots ChatGPT Apps SDK projects.
 - `skills/chatgpt-app-submission/` generates `chatgpt-app-submission.json` for ChatGPT Apps submissions.

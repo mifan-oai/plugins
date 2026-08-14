@@ -1,6 +1,6 @@
 {
   "name": "openai-developers",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Build with OpenAI APIs, Agents SDK, and ChatGPT Apps, and create and save OpenAI API keys from Codex.",
   "author": {
     "name": "OpenAI",
@@ -38,14 +38,14 @@
     "websiteURL": "https://platform.openai.com/",
     "privacyPolicyURL": "https://openai.com/policies/privacy-policy/",
     "termsOfServiceURL": "https://openai.com/policies/row-terms-of-use/",
-    "composerIcon": "./assets/logo.png",
-    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/openai-blossom.svg",
+    "logo": "./assets/openai-blossom.svg",
+    "logoDark": "./assets/openai-blossom-dark.svg",
     "defaultPrompt": [
       "Create an OpenAI API key to use in this project",
       "Build an agent with the Agents SDK",
       "Build a ChatGPT app from my local MCP server and widget idea."
     ],
-    "brandColor": "#10A37F",
     "screenshots": []
   }
 }
